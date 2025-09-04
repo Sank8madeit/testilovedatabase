@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn SQL basics from scratch. Master SELECT, INSERT, UPDATE, DELETE operations, joins, functions, and fundamental database concepts with practical examples.">
+    <meta name="keywords" content="SQL basics, SQL tutorial, SELECT statement, database queries, SQL joins, SQL functions, learn SQL, database tutorial">
+    <title>SQL Basics Tutorial - Learn SQL from Scratch | I Love Database</title>
+    
+    <!-- External Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" media="(prefers-color-scheme: dark)">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/tutorial.css">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "SQL Basics Tutorial",
+        "description": "Comprehensive SQL basics course covering SELECT, INSERT, UPDATE, DELETE operations, joins, and fundamental database concepts",
+        "provider": {
+            "@type": "EducationalOrganization",
+            "name": "I Love Database"
+        },
+        "url": "https://ilovedatabase.com/tutorials/sql-basics/",
+        "courseMode": "online",
+        "educationalLevel": "Beginner",
+        "learningResourceType": "Course",
+        "teaches": ["SQL SELECT statements", "Database operations", "SQL joins", "Data filtering and sorting"]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" class="logo-link">
+                    <i class="fas fa-database"></i>
+                    <span>I Love Database</span>
+                </a>
+            </div>
+            
+            <nav class="top-nav">
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/tutorials/" class="nav-link">Tutorials</a></li>
+                    <li><a href="/blog/" class="nav-link">Blog</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search tutorials...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/tutorials/">Tutorials</a></li>
+                <li><span>SQL Basics</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="tutorial-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="tutorial-sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Course Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 8%"></div>
+                </div>
+                <span class="progress-text">Lesson 1 of 12</span>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Course Outline</h3>
+                <ul class="sidebar-nav">
+                    <li><a href="introduction/" class="active">1. Introduction to SQL</a></li>
+                    <li><a href="basic-select/">2. Basic SELECT Statements</a></li>
+                    <li><a href="filtering-data/">3. Filtering Data with WHERE</a></li>
+                    <li><a href="sorting-data/">4. Sorting Data with ORDER BY</a></li>
+                    <li><a href="aggregate-functions/">5. Aggregate Functions</a></li>
+                    <li><a href="grouping-data/">6. Grouping Data</a></li>
+                    <li><a href="joins/">7. Table Joins</a></li>
+                    <li><a href="subqueries/">8. Subqueries</a></li>
+                    <li><a href="insert-data/">9. Inserting Data</a></li>
+                    <li><a href="update-data/">10. Updating Data</a></li>
+                    <li><a href="delete-data/">11. Deleting Data</a></li>
+                    <li><a href="practice-exercises/">12. Practice Exercises</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Quick Reference</h3>
+                <ul class="sidebar-nav">
+                    <li><a href="#cheat-sheet">SQL Cheat Sheet</a></li>
+                    <li><a href="#sample-database">Sample Database</a></li>
+                    <li><a href="#common-errors">Common Errors</a></li>
+                </ul>
+            </div>
+
+            <!-- Ad Container -->
+            <div class="ad-container">
+                <div class="ad-placeholder">
+                    Advertisement Space
+                    <br>
+                    <small>300x250 AdSense Unit</small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Tutorial Content -->
+        <article class="tutorial-content">
+            <div class="tutorial-header">
+                <h1>Introduction to SQL</h1>
+                <div class="tutorial-meta-info">
+                    <span><i class="fas fa-clock"></i> 15 min read</span>
+                    <span><i class="fas fa-signal"></i> Beginner</span>
+                    <span><i class="fas fa-bookmark"></i> Lesson 1 of 12</span>
+                    <span><i class="fas fa-users"></i> 15.2k learners</span>
+                </div>
+            </div>
+
+            <div class="tutorial-body">
+                <!-- Introduction Section -->
+                <section id="what-is-sql">
+                    <h2>What is SQL?</h2>
+                    <p>SQL (Structured Query Language) is a standardized programming language designed for managing and manipulating relational databases. Whether you're retrieving customer information, analyzing sales data, or updating inventory records, SQL is the tool you'll use to communicate with databases.</p>
+                    
+                    <p>Think of SQL as the universal language for databases. Just as English helps people communicate, SQL helps you communicate with database systems to:</p>
+                    
+                    <ul>
+                        <li><strong>Retrieve data</strong> - Find specific information from tables</li>
+                        <li><strong>Insert data</strong> - Add new records to databases</li>
+                        <li><strong>Update data</strong> - Modify existing information</li>
+                        <li><strong>Delete data</strong> - Remove unwanted records</li>
+                        <li><strong>Create structures</strong> - Build tables and databases</li>
+                    </ul>
+                </section>
+
+                <!-- Why Learn SQL Section -->
+                <section id="why-learn-sql">
+                    <h2>Why Learn SQL?</h2>
+                    <p>SQL is one of the most in-demand skills in today's data-driven world. Here's why learning SQL is essential:</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>High Demand</h3>
+                            <p>SQL is required for most data-related jobs, from data analysts to software engineers.</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-universal-access"></i>
+                            </div>
+                            <h3>Universal Skill</h3>
+                            <p>SQL works with all major database systems like MySQL, PostgreSQL, Oracle, and SQL Server.</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Easy to Learn</h3>
+                            <p>SQL syntax is intuitive and similar to English, making it beginner-friendly.</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Powerful Results</h3>
+                            <p>Perform complex data analysis and reporting with just a few lines of code.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Database Concepts Section -->
+                <section id="database-concepts">
+                    <h2>Basic Database Concepts</h2>
+                    <p>Before diving into SQL commands, let's understand the fundamental concepts:</p>
+                    
+                    <h3>Database</h3>
+                    <p>A database is a structured collection of data stored electronically. Think of it as a digital filing cabinet that organizes information efficiently.</p>
+                    
+                    <h3>Table</h3>
+                    <p>Tables are the building blocks of databases. They store data in rows and columns, similar to a spreadsheet.</p>
+                    
+                    <h3>Columns (Fields)</h3>
+                    <p>Columns define the type of data stored. For example, a customer table might have columns for name, email, and phone number.</p>
+                    
+                    <h3>Rows (Records)</h3>
+                    <p>Rows contain the actual data. Each row represents one complete record, like one customer's information.</p>
+                    
+                    <!-- Visual Example -->
+                    <div class="example-container">
+                        <h4>Example: Customers Table</h4>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>customer_id</th>
+                                        <th>first_name</th>
+                                        <th>last_name</th>
+                                        <th>email</th>
+                                        <th>city</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>john.doe@email.com</td>
+                                        <td>New York</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Sarah</td>
+                                        <td>Smith</td>
+                                        <td>sarah.smith@email.com</td>
+                                        <td>Los Angeles</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Mike</td>
+                                        <td>Johnson</td>
+                                        <td>mike.johnson@email.com</td>
+                                        <td>Chicago</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p><em>This table has 5 columns and 3 rows of data.</em></p>
+                    </div>
+                </section>
+
+                <!-- Your First SQL Query Section -->
+                <section id="first-sql-query">
+                    <h2>Your First SQL Query</h2>
+                    <p>Let's start with the most basic SQL operation - retrieving data using the SELECT statement:</p>
+                    
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span class="code-lang">SQL</span>
+                            <button class="copy-btn" aria-label="Copy code">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code class="language-sql">SELECT first_name, last_name, email
+FROM customers;</code></pre>
+                    </div>
+                    
+                    <p>This query does the following:</p>
+                    <ul>
+                        <li><code>SELECT</code> - Tells the database we want to retrieve data</li>
+                        <li><code>first_name, last_name, email</code> - Specifies which columns we want</li>
+                        <li><code>FROM customers</code> - Indicates which table to get the data from</li>
+                        <li><code>;</code> - Ends the SQL statement (like a period in English)</li>
+                    </ul>
+                    
+                    <div class="result-container">
+                        <h4>Result:</h4>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>first_name</th>
+                                        <th>last_name</th>
+                                        <th>email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>john.doe@email.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sarah</td>
+                                        <td>Smith</td>
+                                        <td>sarah.smith@email.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mike</td>
+                                        <td>Johnson</td>
+                                        <td>mike.johnson@email.com</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SQL Syntax Rules Section -->
+                <section id="sql-syntax">
+                    <h2>SQL Syntax Rules</h2>
+                    <p>To write effective SQL, follow these fundamental syntax rules:</p>
+                    
+                    <div class="syntax-rules">
+                        <div class="rule-item">
+                            <h4><i class="fas fa-check-circle"></i> Case Insensitive Keywords</h4>
+                            <p>SQL keywords like SELECT, FROM, WHERE are not case-sensitive. <code>SELECT</code> and <code>select</code> work the same.</p>
+                        </div>
+                        
+                        <div class="rule-item">
+                            <h4><i class="fas fa-check-circle"></i> Semicolon Termination</h4>
+                            <p>Always end SQL statements with a semicolon (<code>;</code>) - it's like a period in English.</p>
+                        </div>
+                        
+                        <div class="rule-item">
+                            <h4><i class="fas fa-check-circle"></i> Quotes for Text</h4>
+                            <p>Use single quotes for text values: <code>'New York'</code> or <code>'John Doe'</code></p>
+                        </div>
+                        
+                        <div class="rule-item">
+                            <h4><i class="fas fa-check-circle"></i> No Quotes for Numbers</h4>
+                            <p>Numbers don't need quotes: <code>25</code>, <code>3.14</code>, <code>1000</code></p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Practice Exercise -->
+                <section id="practice-exercise">
+                    <h2>Practice Exercise</h2>
+                    <p>Let's test your understanding with a simple exercise:</p>
+                    
+                    <div class="quiz-container">
+                        <div class="quiz-question">
+                            Which SQL statement would you use to retrieve all columns from a table called "products"?
+                        </div>
+                        
+                        <form class="quiz-form">
+                            <ul class="quiz-options">
+                                <li class="quiz-option">
+                                    <input type="radio" name="q1" value="a" id="q1a">
+                                    <label for="q1a">GET * FROM products;</label>
+                                </li>
+                                <li class="quiz-option">
+                                    <input type="radio" name="q1" value="b" id="q1b">
+                                    <label for="q1b">SELECT * FROM products;</label>
+                                </li>
+                                <li class="quiz-option">
+                                    <input type="radio" name="q1" value="c" id="q1c">
+                                    <label for="q1c">RETRIEVE * FROM products;</label>
+                                </li>
+                                <li class="quiz-option">
+                                    <input type="radio" name="q1" value="d" id="q1d">
+                                    <label for="q1d">SHOW * FROM products;</label>
+                                </li>
+                            </ul>
+                            
+                            <button type="button" class="quiz-submit">Check Answer</button>
+                            
+                            <div class="quiz-feedback" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 0.5rem;">
+                                <!-- Feedback will be inserted here -->
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- What's Next Section -->
+                <section id="whats-next">
+                    <h2>What's Next?</h2>
+                    <p>Congratulations! You've learned the basics of SQL and databases. In the next lesson, we'll dive deeper into SELECT statements and learn how to:</p>
+                    
+                    <ul>
+                        <li>Select specific columns from tables</li>
+                        <li>Use the asterisk (*) to select all columns</li>
+                        <li>Write more complex SELECT queries</li>
+                        <li>Understand query execution order</li>
+                    </ul>
+                    
+                    <div class="next-lesson-preview">
+                        <h4>Next Lesson Preview:</h4>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-lang">SQL</span>
+                            </div>
+                            <pre><code class="language-sql">-- Select all columns
+SELECT * FROM customers;
+
+-- Select specific columns
+SELECT first_name, email FROM customers;
+
+-- Add aliases for better readability
+SELECT first_name AS "First Name", 
+       email AS "Email Address"
+FROM customers;</code></pre>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="tutorial-nav">
+                <a href="#" class="nav-btn disabled">
+                    <i class="fas fa-chevron-left"></i>
+                    Previous: Course Overview
+                </a>
+                
+                <a href="basic-select/" class="nav-btn">
+                    Next: Basic SELECT Statements
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </nav>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>I Love Database</h3>
+                    <p>Your comprehensive resource for mastering database concepts and technologies.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>SQL Basics Course</h4>
+                    <ul>
+                        <li><a href="introduction/">Introduction to SQL</a></li>
+                        <li><a href="basic-select/">Basic SELECT Statements</a></li>
+                        <li><a href="filtering-data/">Filtering Data</a></li>
+                        <li><a href="joins/">Table Joins</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/tutorials/">All Tutorials</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/help/">Help Center</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/terms/">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 I Love Database. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="../../js/tutorial-quiz.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

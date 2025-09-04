@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete database tutorials and learning paths. Master SQL, NoSQL, cloud databases, and data engineering with comprehensive guides and examples.">
+    <meta name="keywords" content="database tutorials, SQL course, NoSQL guide, cloud database training, data engineering, BigQuery, MongoDB, database design">
+    <title>Database Tutorials - Complete Learning Guide | I Love Database</title>
+    
+    <!-- External Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/tutorial.css">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Database Tutorials",
+        "description": "Comprehensive collection of database tutorials covering SQL, NoSQL, cloud databases, and data engineering",
+        "url": "https://ilovedatabase.com/tutorials/",
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "Course",
+                    "name": "SQL Basics",
+                    "description": "Learn fundamental SQL concepts and operations",
+                    "url": "https://ilovedatabase.com/tutorials/sql-basics/"
+                },
+                {
+                    "@type": "Course", 
+                    "name": "Advanced SQL",
+                    "description": "Master complex queries and advanced SQL techniques",
+                    "url": "https://ilovedatabase.com/tutorials/advanced-sql/"
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" class="logo-link">
+                    <i class="fas fa-database"></i>
+                    <span>I Love Database</span>
+                </a>
+            </div>
+            
+            <nav class="top-nav">
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/tutorials/" class="nav-link active">Tutorials</a></li>
+                    <li><a href="/blog/" class="nav-link">Blog</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search tutorials...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="/">Home</a></li>
+                <li><span>Tutorials</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1 class="page-title">Database Tutorials</h1>
+                <p class="page-description">Master database concepts with our comprehensive, step-by-step tutorials. From SQL basics to advanced cloud databases and data engineering.</p>
+            </section>
+
+            <!-- Learning Paths -->
+            <section class="learning-paths">
+                <h2 class="section-title">Choose Your Learning Path</h2>
+                
+                <div class="path-grid">
+                    <!-- Beginner Path -->
+                    <div class="learning-path beginner">
+                        <div class="path-header">
+                            <div class="path-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="path-info">
+                                <h3 class="path-title">Beginner Path</h3>
+                                <span class="path-level">Start Here</span>
+                            </div>
+                        </div>
+                        <p class="path-description">Perfect for those new to databases. Learn SQL fundamentals and basic database concepts.</p>
+                        <div class="path-courses">
+                            <a href="sql-basics/" class="course-card">
+                                <div class="course-icon">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="course-info">
+                                    <h4>SQL Basics</h4>
+                                    <p>Learn SELECT, INSERT, UPDATE, DELETE operations</p>
+                                    <div class="course-meta">
+                                        <span class="duration"><i class="fas fa-clock"></i> 4 hours</span>
+                                        <span class="lessons"><i class="fas fa-bookmark"></i> 12 lessons</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="database-design/" class="course-card">
+                                <div class="course-icon">
+                                    <i class="fas fa-sitemap"></i>
+                                </div>
+                                <div class="course-info">
+                                    <h4>Database Design</h4>
+                                    <p>Learn normalization and ER modeling</p>
+                                    <div class="course-meta">
+                                        <span class="duration"><i class="fas fa-clock"></i> 3 hours</span>
+                                        <span class="lessons"><i class="fas fa-bookmark"></i> 8 lessons</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Intermediate Path -->
+                    <div class="learning-path intermediate">
+                        <div class="path-header">
+                            <div class="path-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="path-info">
+                                <h3 class="path-title">Intermediate Path</h3>
+                                <span class="path-level">Build Skills</span>
+                            </div>
+                        </div>
+                        <p class="path-description">Take your SQL skills to the next level with advanced queries and optimization techniques.</p>
+                        <div class="path-courses">
+                            <a href="advanced-sql/" class="course-card">
+                                <div class="course-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="course-info">
+                                    <h4>Advanced SQL</h4>
+                                    <p>Window functions, CTEs, and complex queries</p>
+                                    <div class="course-meta">
+                                        <span class="duration"><i class="fas fa-clock"></i> 6 hours</span>
+                                        <span class="lessons"><i class="fas fa-bookmark"></i> 15 lessons</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="nosql/" class="course-card">
+                                <div class="course-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="course-info">
+                                    <h4>NoSQL Databases</h4>
+                                    <p>MongoDB, Redis, and Cassandra</p>
+                                    <div class="course-meta">
+                                        <span class="duration"><i class="fas fa-clock"></i> 5 hours</span>
+                                        <span class="lessons"><i class="fas fa-bookmark"></i> 10 lessons</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Path -->
+                    <div class="learning-path advanced">
+                        <div class="path-header">
+                            <div class="path-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="path-info">
+                                <h3 class="path-title">Advanced Path</h3>
+                                <span class="path-level">Master Level</span>
+                            </div>
+                        </div>
+                        <p class="path-description">Master cloud databases, data warehousing, and enterprise-level data engineering.</p>
+                        <div class="path-courses">
+                            <a href="cloud-databases/" class="course-card">
+                                <div class="course-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <div class="course-info">
+                                    <h4>Cloud Databases</h4>
+                                    <p>BigQuery, Snowflake, Redshift, Azure Synapse</p>
+                                    <div class="course-meta">
+                                        <span class="duration"><i class="fas fa-clock"></i> 8 hours</span>
+                                        <span class="lessons"><i class="fas fa-bookmark"></i> 20 lessons</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="etl-data-warehousing/" class="course-card">
+                                <div class="course-icon">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="course-info">
+                                    <h4>ETL & Data Warehousing</h4>
+                                    <p>Data pipelines and warehouse modeling</p>
+                                    <div class="course-meta">
+                                        <span class="duration"><i class="fas fa-clock"></i> 7 hours</span>
+                                        <span class="lessons"><i class="fas fa-bookmark"></i> 18 lessons</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- All Tutorials -->
+            <section class="all-tutorials">
+                <h2 class="section-title">All Tutorials</h2>
+                
+                <div class="tutorial-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="sql">SQL</button>
+                    <button class="filter-btn" data-filter="nosql">NoSQL</button>
+                    <button class="filter-btn" data-filter="cloud">Cloud</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="performance">Performance</button>
+                </div>
+
+                <div class="tutorial-grid">
+                    <article class="tutorial-card" data-category="sql beginner">
+                        <div class="tutorial-image">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-meta">
+                                <span class="category">SQL Basics</span>
+                                <span class="difficulty beginner">Beginner</span>
+                            </div>
+                            <h3 class="tutorial-title">
+                                <a href="sql-basics/">SQL Fundamentals</a>
+                            </h3>
+                            <p class="tutorial-description">Learn the basics of SQL including SELECT statements, filtering, sorting, and basic joins.</p>
+                            <div class="tutorial-stats">
+                                <span><i class="fas fa-clock"></i> 4h</span>
+                                <span><i class="fas fa-bookmark"></i> 12 lessons</span>
+                                <span><i class="fas fa-users"></i> 15.2k learners</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tutorial-card" data-category="sql intermediate">
+                        <div class="tutorial-image">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-meta">
+                                <span class="category">Advanced SQL</span>
+                                <span class="difficulty intermediate">Intermediate</span>
+                            </div>
+                            <h3 class="tutorial-title">
+                                <a href="advanced-sql/">Advanced SQL Techniques</a>
+                            </h3>
+                            <p class="tutorial-description">Master window functions, CTEs, advanced joins, and query optimization techniques.</p>
+                            <div class="tutorial-stats">
+                                <span><i class="fas fa-clock"></i> 6h</span>
+                                <span><i class="fas fa-bookmark"></i> 15 lessons</span>
+                                <span><i class="fas fa-users"></i> 8.7k learners</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tutorial-card" data-category="nosql intermediate">
+                        <div class="tutorial-image">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-meta">
+                                <span class="category">NoSQL</span>
+                                <span class="difficulty intermediate">Intermediate</span>
+                            </div>
+                            <h3 class="tutorial-title">
+                                <a href="nosql/">NoSQL Databases</a>
+                            </h3>
+                            <p class="tutorial-description">Explore MongoDB, Redis, and Cassandra with practical examples and use cases.</p>
+                            <div class="tutorial-stats">
+                                <span><i class="fas fa-clock"></i> 5h</span>
+                                <span><i class="fas fa-bookmark"></i> 10 lessons</span>
+                                <span><i class="fas fa-users"></i> 6.3k learners</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tutorial-card" data-category="cloud advanced">
+                        <div class="tutorial-image">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-meta">
+                                <span class="category">Cloud Databases</span>
+                                <span class="difficulty advanced">Advanced</span>
+                            </div>
+                            <h3 class="tutorial-title">
+                                <a href="cloud-databases/">Cloud Database Mastery</a>
+                            </h3>
+                            <p class="tutorial-description">Master BigQuery, Snowflake, Redshift, and Azure Synapse for cloud-scale analytics.</p>
+                            <div class="tutorial-stats">
+                                <span><i class="fas fa-clock"></i> 8h</span>
+                                <span><i class="fas fa-bookmark"></i> 20 lessons</span>
+                                <span><i class="fas fa-users"></i> 4.1k learners</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tutorial-card" data-category="design beginner">
+                        <div class="tutorial-image">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-meta">
+                                <span class="category">Database Design</span>
+                                <span class="difficulty beginner">Beginner</span>
+                            </div>
+                            <h3 class="tutorial-title">
+                                <a href="database-design/">Database Design Principles</a>
+                            </h3>
+                            <p class="tutorial-description">Learn normalization, ER modeling, and best practices for database design.</p>
+                            <div class="tutorial-stats">
+                                <span><i class="fas fa-clock"></i> 3h</span>
+                                <span><i class="fas fa-bookmark"></i> 8 lessons</span>
+                                <span><i class="fas fa-users"></i> 9.8k learners</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tutorial-card" data-category="performance advanced">
+                        <div class="tutorial-image">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-meta">
+                                <span class="category">ETL & Data Warehousing</span>
+                                <span class="difficulty advanced">Advanced</span>
+                            </div>
+                            <h3 class="tutorial-title">
+                                <a href="etl-data-warehousing/">ETL & Data Warehousing</a>
+                            </h3>
+                            <p class="tutorial-description">Build efficient data pipelines and design scalable data warehouse architectures.</p>
+                            <div class="tutorial-stats">
+                                <span><i class="fas fa-clock"></i> 7h</span>
+                                <span><i class="fas fa-bookmark"></i> 18 lessons</span>
+                                <span><i class="fas fa-users"></i> 3.5k learners</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>I Love Database</h3>
+                    <p>Your comprehensive resource for mastering database concepts and technologies.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Learning Paths</h4>
+                    <ul>
+                        <li><a href="/tutorials/sql-basics/">SQL Basics</a></li>
+                        <li><a href="/tutorials/advanced-sql/">Advanced SQL</a></li>
+                        <li><a href="/tutorials/nosql/">NoSQL Databases</a></li>
+                        <li><a href="/tutorials/cloud-databases/">Cloud Databases</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/tutorials/">All Tutorials</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/help/">Help Center</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/terms/">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 I Love Database. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/tutorial-filters.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

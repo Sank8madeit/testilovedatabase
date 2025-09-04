@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I Love Database - Your comprehensive learning hub for database concepts, SQL tutorials, NoSQL, cloud databases, and data warehousing. Learn database design, optimization, and best practices.">
+    <meta name="keywords" content="database tutorial, SQL learning, NoSQL, database design, data warehousing, BigQuery, MongoDB, database optimization">
+    <meta name="author" content="I Love Database">
+    <meta property="og:title" content="I Love Database - Complete Database Learning Hub">
+    <meta property="og:description" content="Master database concepts with comprehensive tutorials, examples, and interactive exercises. From SQL basics to advanced cloud databases.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ilovedatabase.com">
+    <title>I Love Database - Complete Database Learning Hub | SQL, NoSQL, Cloud Databases</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- External Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" media="(prefers-color-scheme: dark)">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "I Love Database",
+        "url": "https://ilovedatabase.com",
+        "description": "Comprehensive learning hub for database concepts, SQL tutorials, and data engineering",
+        "sameAs": [
+            "https://twitter.com/ilovedatabase",
+            "https://linkedin.com/company/ilovedatabase"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" class="logo-link">
+                    <i class="fas fa-database"></i>
+                    <span>I Love Database</span>
+                </a>
+            </div>
+            
+            <nav class="top-nav">
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link active">Home</a></li>
+                    <li><a href="/tutorials/" class="nav-link">Tutorials</a></li>
+                    <li><a href="/blog/" class="nav-link">Blog</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search tutorials...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Master Database Concepts</h1>
+                    <p class="hero-subtitle">Your comprehensive learning hub for SQL, NoSQL, cloud databases, and data engineering. Learn from basics to advanced topics with hands-on examples.</p>
+                    <div class="hero-actions">
+                        <a href="/tutorials/sql-basics/" class="btn btn-primary">Start Learning SQL</a>
+                        <a href="/tutorials/" class="btn btn-secondary">Browse All Tutorials</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <span class="code-lang">SQL</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i></button>
+                        </div>
+                        <pre><code class="language-sql">SELECT users.name, 
+       COUNT(orders.id) as order_count
+FROM users
+LEFT JOIN orders ON users.id = orders.user_id
+WHERE users.created_at >= '2024-01-01'
+GROUP BY users.id, users.name
+HAVING COUNT(orders.id) > 5
+ORDER BY order_count DESC;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories" id="categories">
+            <div class="container">
+                <h2 class="section-title">Learning Paths</h2>
+                <p class="section-subtitle">Choose your database journey based on your skill level and interests</p>
+                
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h3 class="category-title">SQL Basics</h3>
+                        <p class="category-description">Start your database journey with fundamental SQL concepts, queries, and operations.</p>
+                        <ul class="category-topics">
+                            <li>SELECT, INSERT, UPDATE, DELETE</li>
+                            <li>Joins and Relationships</li>
+                            <li>Functions and Aggregations</li>
+                        </ul>
+                        <a href="/tutorials/sql-basics/" class="category-link">Start Learning <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="category-title">Advanced SQL</h3>
+                        <p class="category-description">Master complex queries, window functions, CTEs, and advanced SQL techniques.</p>
+                        <ul class="category-topics">
+                            <li>Window Functions</li>
+                            <li>Common Table Expressions</li>
+                            <li>Advanced Joins & Subqueries</li>
+                        </ul>
+                        <a href="/tutorials/advanced-sql/" class="category-link">Explore Advanced <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="category-title">NoSQL Databases</h3>
+                        <p class="category-description">Learn MongoDB, Redis, Cassandra, and other NoSQL database technologies.</p>
+                        <ul class="category-topics">
+                            <li>MongoDB Operations</li>
+                            <li>Redis Caching</li>
+                            <li>Cassandra Modeling</li>
+                        </ul>
+                        <a href="/tutorials/nosql/" class="category-link">Discover NoSQL <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="category-title">Cloud Databases</h3>
+                        <p class="category-description">Master BigQuery, Snowflake, Redshift, and Azure Synapse for cloud-scale analytics.</p>
+                        <ul class="category-topics">
+                            <li>Google BigQuery</li>
+                            <li>Snowflake Data Warehouse</li>
+                            <li>Amazon Redshift</li>
+                        </ul>
+                        <a href="/tutorials/cloud-databases/" class="category-link">Go Cloud <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h3 class="category-title">Database Design</h3>
+                        <p class="category-description">Learn normalization, ER modeling, indexing, and performance optimization.</p>
+                        <ul class="category-topics">
+                            <li>Database Normalization</li>
+                            <li>ER Diagrams</li>
+                            <li>Index Optimization</li>
+                        </ul>
+                        <a href="/tutorials/database-design/" class="category-link">Design Better <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3 class="category-title">ETL & Data Warehousing</h3>
+                        <p class="category-description">Master data pipelines, ETL processes, and data warehouse architectures.</p>
+                        <ul class="category-topics">
+                            <li>ETL Design Patterns</li>
+                            <li>Data Pipeline Tools</li>
+                            <li>Warehouse Modeling</li>
+                        </ul>
+                        <a href="/tutorials/etl-data-warehousing/" class="category-link">Build Pipelines <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose I Love Database?</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Interactive Code Examples</h3>
+                        <p>Copy, modify, and run code examples with syntax highlighting and one-click copying.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile-Friendly</h3>
+                        <p>Learn on any device with our responsive design optimized for mobile and tablet.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Beginner to Expert</h3>
+                        <p>Structured learning paths from basic concepts to advanced database engineering.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Fast Search</h3>
+                        <p>Quickly find tutorials, code examples, and concepts with our intelligent search.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated</h2>
+                    <p>Get the latest database tutorials, tips, and industry insights delivered to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>I Love Database</h3>
+                    <p>Your comprehensive resource for mastering database concepts and technologies.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Learning Paths</h4>
+                    <ul>
+                        <li><a href="/tutorials/sql-basics/">SQL Basics</a></li>
+                        <li><a href="/tutorials/advanced-sql/">Advanced SQL</a></li>
+                        <li><a href="/tutorials/nosql/">NoSQL Databases</a></li>
+                        <li><a href="/tutorials/cloud-databases/">Cloud Databases</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/tutorials/">All Tutorials</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/help/">Help Center</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/terms/">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 I Love Database. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
